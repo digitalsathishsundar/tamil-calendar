@@ -1,0 +1,218 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f5f5f5;
+  color: #333;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Calendar container */
+.calendar-container {
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto; /* Allow horizontal scroll for small screens */
+}
+
+/* Month header */
+.month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+/* Left and right arrows */
+.month-header button {
+  background: #880e4f;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.month-header button:hover {
+  background: #ad1457;
+  transform: scale(1.1);
+}
+
+/* Dropdown styling for month title */
+.month-title-dropdown {
+  background: #fce4ec; /* Light pink background */
+  border: 2px solid #880e4f; /* Border color */
+  font-size: 20px;
+  color: #880e4f;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  appearance: none;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.month-title-dropdown:hover {
+  background: #ffe6f0; /* Slightly lighter pink when hovered */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Ensures the table doesn't shrink too much */
+}
+
+thead th {
+  background: #880e4f;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+tbody td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  vertical-align: top;
+  height: 100px;
+  text-align: center;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+/* Styling for date and details */
+.date-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.english-date {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.tamil-date {
+  font-size: 16px;
+  font-weight: bold;
+  color: #d32f2f;
+  margin-top: 2px;
+}
+
+.details {
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+  word-break: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .month-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  table {
+    font-size: 12px;
+    min-width: 600px; /* Horizontal scroll maintained */
+  }
+
+  thead th {
+    padding: 5px;
+  }
+
+  tbody td {
+    padding: 5px;
+    height: auto;
+  }
+
+  .date-container .english-date {
+    font-size: 16px;
+  }
+
+  .date-container .tamil-date {
+    font-size: 14px;
+  }
+
+  .date-container .details {
+    font-size: 10px;
+  }
+
+  .month-title-dropdown {
+    font-size: 16px;
+    padding: 6px 12px;
+    width: auto; /* Dropdown adjusts to content */
+  }
+
+  .month-header button {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .month-header {
+    gap: 10px;
+  }
+
+  table {
+    font-size: 10px;
+  }
+
+  .date-container .english-date {
+    font-size: 14px;
+  }
+
+  .date-container .tamil-date {
+    font-size: 12px;
+  }
+
+  .date-container .details {
+    font-size: 9px;
+  }
+
+  .month-title-dropdown {
+    font-size: 14px;
+    padding: 5px 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .month-header button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
